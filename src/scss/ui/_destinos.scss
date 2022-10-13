@@ -1,0 +1,43 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.destinos {
+
+    .destinos__heading {
+        margin: 2rem 0;
+    }
+
+    .destinos__grid {
+
+        @include m.grid(1, 2rem);
+
+        @include m.tablet { 
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.desktop { 
+            @include m.grid(4, 2rem);
+        }
+    }
+
+    .destino {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        .destino__imagen {
+            width: 14rem;
+            height: 14rem;
+        }
+
+        .destino__nombre {
+            margin: 0;
+        }
+
+        .destino__distancia {
+            margin: 0;
+        }
+    }
+
+}

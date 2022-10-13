@@ -1,0 +1,35 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.experiencias {
+
+    .experiencias__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 30rem);
+        column-gap: 2rem;
+
+        @include m.scrollHorizontal;
+
+        @include m.tablet { 
+            @include m.grid(3, 2rem);
+            overflow-x: hidden;
+        }
+    }
+
+    .experiencia {
+
+        .experiencia__imagen {
+            border-radius: 1rem;
+        }
+
+        .experiencia__nombre {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .experiencia__texto {
+            font-size: 1.8rem;
+        }
+    }
+}
+

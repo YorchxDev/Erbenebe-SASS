@@ -1,0 +1,61 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.footer {
+    background-color: v.$grisClaro;
+    border-top: 1px solid v.$gris;
+    padding-top: 5rem;
+
+    .footer__grid {
+
+        @include m.tablet { 
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.desktop { 
+            @include m.grid(4, 2rem);
+        }
+    }
+
+    .footer__seccion {
+
+        .footer__heading {
+            margin: 2rem 0;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .footer__enlace {
+            display: block;
+            color: v.$gris;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .footer__barra {
+        border-top: 1px solid v.$gris;
+        margin-top: 1rem;
+        padding: 2rem 0;
+
+        .footer__baranav {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @include m.tablet { 
+                flex-direction: row;
+            }
+
+            .footer__enlace--barra {
+                color: v.$gris;
+
+                &::before {
+                    content: '-';
+                    margin-right: 1rem;
+                }
+            }
+
+        }
+    }
+}
